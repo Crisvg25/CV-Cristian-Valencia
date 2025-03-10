@@ -7,9 +7,9 @@
 - CSS3 (Flexbox, CSS Grid)
 - Diseño responsivo
 
-## Cómo ver el CV
-Puedes acceder al CV en los siguientes formatos:
-- [Ver en línea (HTML) file:///C:/Users/cristian/Desktop/MiCV/CV_Cristian_Valencia.html
+## Descargas
+Puedes descargar mi CV en formato PDF aquí:
+[Descargar CV en PDF](https://github.com/Crisvg25/CV-Cristian-Valencia/raw/main/CV_Cristian_Valencia.pdf)
 
 ## Contacto
 Si tienes alguna pregunta o comentario, no dudes en contactarme:
