@@ -11,3 +11,10 @@
 Puedes acceder al CV en los siguientes formatos:
 - [Ver en línea (HTML) file:///C:/Users/cristian/Desktop/MiCV/CV_Cristian_Valencia.html
 
+## Contacto
+Si tienes alguna pregunta o comentario, no dudes en contactarme:
+
+📧 Email: christian.vg25@gmail.com
+
+💼 LinkedIn: www.linkedin.com/in/cvg25
+
