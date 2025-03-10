@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Cristian Valencia</title>
+  <style>
+    :root {
+      --primary-color: #2a52be;
+      --secondary-color: #f0f2f5;
+      --text-color: #333;
+      --accent-color: #4680e2;
+      --light-text: #6e7c91;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      color: var(--text-color);
+      background-color: #f9f9f9;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      background-color: white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    header {
+      display: flex;
+      padding: 2rem;
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .profile-img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 2rem;
+      overflow: hidden;
+      border: 3px solid white;
+    }
+    
+    .profile-img img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .profile-initials {
+      font-size: 48px;
+      font-weight: bold;
+    }
+    
+    .header-content h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .header-content h2 {
+      font-size: 1.3rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .contact-info span {
+      display: flex;
+      align-items: center;
+    }
+    
+    .contact-info i {
+      margin-right: 0.5rem;
+    }
+    
+    main {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+    
+    .sidebar {
+      padding: 2rem;
+      background-color: var(--secondary-color);
+    }
+    
+    .main-content {
+      padding: 2rem;
+    }
+    
+    .section {
+      margin-bottom: 2rem;
+    }
+    
+    h3 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .skill-name {
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+    }
+    
+    .skill-level {
+      height: 8px;
+      background-color: #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .skill-level-fill {
+      height: 100%;
+      background-color: var(--accent-color);
+    }
+    
+    .language-item, .social-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    
+    .experience-item, .education-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .timeline {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    
+    .job-title, .education-title {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+    
+    .company, .institution {
+      font-weight: 500;
+    }
+    
+    .date {
+      color: var(--light-text);
+      font-size: 0.9rem;
+    }
+    
+    ul.responsibilities {
+      list-style-type: none;
+      padding-left: 1.5rem;
+    }
+    
+    ul.responsibilities li {
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    
+    ul.responsibilities li::before {
+      content: "•";
+      color: var(--accent-color);
+      font-weight: bold;
+      position: absolute;
+      left: -1rem;
+    }
+    
+    .projects-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    
+    .project-item {
+      border: 1px solid #eee;
+      border-radius: 4px;
+      padding: 1rem;
+      transition: all 0.2s;
+    }
+    
+    .project-item:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .project-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+    
+    .project-tech {
+      font-size: 0.85rem;
+      color: var(--light-text);
+      margin-bottom: 0.5rem;
+    }
+    
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .interest-tag {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 15px;
+      font-size: 0.85rem;
+    }
+    
+    @media print {
+      body {
+        background-color: white;
+      }
+      .container {
+        box-shadow: none;
+        max-width: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .profile-img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+      
+      main {
+        grid-template-columns: 1fr;
+      }
+      
+      .projects-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="profile-img">
+        <img src="img/foto_cv.jpg" alt="Cristian Valencia">
+      </div>
+      <div class="header-content">
+        <h1>Cristian David Valencia Guzmán</h1>
+        <h2>Industrial Management Professional with focus on Databases and Backend Development.</h2>
+        <div class="contact-info">
+          <span><i>📧</i> christian.vg25@gmail.com</span>
+          <span><i>📱</i> +57 323 400 8236</span>
+          <span><i>📱</i> +57 321 739 8421</span>
+          <span><i>📍</i> La Ceja, Antioquia</span>
+          <span><i>🆔</i> ID: 1.040.042.369</span>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <div class="sidebar">
+        <div class="section">
+          <h3>Profile</h3>
+          <p>Industrial Management Professional with focus on Databases and Backend Development, experienced in project management. Capable of combining leadership, data analysis, and software development to optimize processes and improve operational efficiency. Interested in roles where I can apply my technical and management knowledge to drive innovative solutions.</p>
+        </div>
+        
+        <div class="section">
+          <h3>Technical Skills</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <span class="skill-name">Python</span>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Flask/Dash</span>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">SQL/Databases</span>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Backend Development</span>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Power BI</span>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3>Professional Skills</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <span class="skill-name">Project Management</span>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Data Analysis</span>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Teamwork</span>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Problem Solving</span>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3>Links</h3>
+          <div class="skills-list">
+            <div class="social-item">
+              <span>GitHub</span>
+              <a href="https://github.com/Crisvg25" target="_blank">github.com/Crisvg25</a>
+            </div>
+            <div class="social-item">
+              <span>LinkedIn</span>
+              <a href="www.linkedin.com/in/cristian-valencia-b97700190" target="_blank">LinkedIn Profile</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3>Interests</h3>
+          <div class="interests">
+            <span class="interest-tag">Research</span>
+            <span class="interest-tag">Web Design</span>
+            <span class="interest-tag">Research</span>
+            <span class="interest-tag">Data Analysis</span>
+            <span class="interest-tag">Environmental Sciences</span>
+            <span class="interest-tag">Continuous Learning</span>
+            <span class="interest-tag">Reading</span>
+            <span class="interest-tag">Cycling</span>
+            <span class="interest-tag">Cinema</span>
+            <span class="interest-tag">Hiking</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="main-content">
+        <div class="section">
+          <h3>Featured Projects</h3>
+          <div class="projects-list">
+            <div class="project-item">
+              <div class="project-title">AquaCheck La Ceja</div>
+              <div class="project-tech">Python, Flask, Dash, SQLite, Pandas, Plotly, Bootstrap</div>
+              <p>Comprehensive water quality monitoring system that I developed for La Ceja, implementing a full-stack architecture. I designed an optimized SQLite database to capture and store critical water parameters, along with an interactive web interface using Dash and Bootstrap. The system features advanced analytical visualizations through Plotly, allowing for real-time identification of trends and anomalies. I implemented a complete CRUD system for efficient data management and configured automated deployment on the Render platform, ensuring high availability and performance.</p>
+            </div>
+            <div class="project-item">
+              <div class="project-title">Interactive Digital Curriculum Vitae</div>
+              <div class="project-tech">HTML5, CSS3, Responsive Design, Flexbox, CSS Grid</div>
+              <p>I developed this digital CV from scratch applying modern web development techniques. I implemented a responsive design using CSS Grid and Flexbox to ensure optimal display on any device. I created a visual system to represent technical and professional skills through dynamic progress bars. The design includes subtle transitions to enhance user experience and is structured with semantic HTML to maximize accessibility and SEO. The layout contemplates both digital visualization and printing, demonstrating versatility in presenting personal and professional information.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3>Work Experience</h3>
+          
+          <div class="experience-item">
+            <div class="timeline">
+              <span class="job-title">Cost Manager</span>
+              <span class="date">Jul 2023 - Jul 2024</span>
+            </div>
+            <div class="company">Puro Cuero</div>
+            <ul class="responsibilities">
+              <li>Establishment and updating of product costs with detailed tracking.</li>
+              <li>Preparation of budgets and prices for point-of-sale and export quotations.</li>
+              <li>Developed cost sheets based on production process information.</li>
+              <li>Supervision of cost management in production, implementing reduction strategies.</li>
+            </ul>
+          </div>
+          
+          <div class="experience-item">
+            <div class="timeline">
+              <span class="job-title">General Administrator</span>
+              <span class="date">Oct 2022 - Jun 2023</span>
+            </div>
+            <div class="company">Mr Cheester SAS</div>
+            <ul class="responsibilities">
+              <li>Management and leadership of teams to achieve objectives in a collaborative environment.</li>
+              <li>Managing and maintaining quality in manufactured products and provided services.</li>
+              <li>Generation of purchase orders and maintenance of supplier relationships.</li>
+              <li>Inventory control and supervision of merchandise reception and verification.</li>
+              <li>Ensuring compliance with Occupational Health and Safety regulations and payroll preparation.</li>
+            </ul>
+          </div>
+          
+          <div class="experience-item">
+            <div class="timeline">
+              <span class="job-title">Process Leader</span>
+              <span class="date">Feb 2022 - Oct 2022</span>
+            </div>
+            <div class="company">Distrito Horeka SAS</div>
+            <ul class="responsibilities">
+              <li>Optimization of picking and packing processes to improve operational efficiency.</li>
+              <li>Preparation of shipping guides and cargo manifests with regulatory precision.</li>
+              <li>Coordination of purchase orders to ensure efficient and timely supply.</li>
+              <li>Strategic planning of distribution routes to maximize efficiency.</li>
+            </ul>
+          </div>
+          
+          <div class="experience-item">
+            <div class="timeline">
+              <span class="job-title">Administrative Advisor</span>
+              <span class="date">Sep 2020 - Sep 2021</span>
+            </div>
+            <div class="company">Transportes Unidos La Ceja</div>
+            <ul class="responsibilities">
+              <li>Supervision of merchandise reception and verification with regulatory compliance.</li>
+              <li>Customer service and advisory, resolving requirements and issues.</li>
+              <li>Preparation of reports and indicators for informed decision-making.</li>              
+              <li>Optimization of picking and packing processes to improve operational efficiency.</li>
+            </ul>
+          </div>
+          
+          <div class="experience-item">
+            <div class="timeline">
+              <span class="job-title">Lead Advisor</span>
+              <span class="date">Jul 2014 - Dec 2016</span>
+            </div>
+            <div class="company">ANDES BPO</div>
+            <ul class="responsibilities">
+              <li>Monitoring of management indicators to evaluate performance and operational effectiveness.</li>
+              <li>Development and management of strategies for various collection campaigns, optimizing results.</li>
+              <li>Reception and analysis of corporate client requests, ensuring fulfillment of their requirements.</li>
+              <li>Provision of high-quality customer service, effectively addressing complaints and claims.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3>Education</h3>
+          
+          <div class="education-item">
+            <div class="timeline">
+              <span class="education-title">Back End Programming Bootcamp</span>
+              <span class="date">Jul 2023 - May 2024</span>
+            </div>
+            <div class="institution">MAKAIA</div>
+          </div>
+          
+          <div class="education-item">
+            <div class="timeline">
+              <span class="education-title">Smarbit Programming Seedbed</span>
+              <span class="date">May 2024 - Aug 2024</span>
+            </div>
+            <div class="institution">Instituto Técnico Aurelio Patiño Patiño</div>
+          </div>
+          
+          <div class="education-item">
+            <div class="timeline">
+              <span class="education-title">Visualization, Analysis and Interpretation of Data in Power BI</span>
+              <span class="date">Dec 2024</span>
+            </div>
+            <div class="institution">CESDE</div>
+          </div>
+          
+          <div class="education-item">
+            <div class="timeline">
+              <span class="education-title">Industrial Management Technology</span>
+              <span class="date">Aug 2015 - Aug 2019</span>
+            </div>
+            <div class="institution">Politécnico Jaime Isaza Cadavid</div>
+          </div>
+          
+          <div class="education-item">
+            <div class="timeline">
+              <span class="education-title">Diploma in Project Management</span>
+              <span class="date">Feb 2020 - Jun 2020</span>
+            </div>
+            <div class="institution">Politécnico de Colombia</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
