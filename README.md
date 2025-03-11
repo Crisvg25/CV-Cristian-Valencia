@@ -9,8 +9,8 @@
 
 ## Descargas
 Puedes descargar mi CV en formato PDF aquí:
-- [Descargar CV en español](CV_Cristian_Valencia_Espanol.pdf)
-- [Descargar CV en inglés](CV_Cristian_Valencia.pdf)
+- [Descargar CV en español](https://github.com/Crisvg25/CV-Cristian-Valencia/raw/main/CV_Cristian_Valencia_Espanol.pdf)
+- [Descargar CV en inglés](https://github.com/Crisvg25/CV-Cristian-Valencia/raw/main/CV_Cristian_Valencia.pdf)
 
 ## Contacto
 Si tienes alguna pregunta o comentario, no dudes en contactarme:
